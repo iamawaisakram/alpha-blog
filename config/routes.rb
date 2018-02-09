@@ -5,4 +5,11 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :articles
+
+  get 'signup', to: 'users#new'
+  # 1st method:
+  #post 'users', to:'users#create'
+
+  # 2nd Method
+  resources :users, except: [:new]
 end
