@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+	
+	def index
+		@user = User.all
+	end
+
 	def new
 		@user = User.new
 	end
@@ -11,7 +16,6 @@ class UsersController < ApplicationController
 		else
 			render 'new'
 		end
-
 	end
 
 
@@ -29,15 +33,14 @@ class UsersController < ApplicationController
 			render 'edit'
 		end
 	end
+
 	def show
-		#@user = User.find(user_params[:id])
-		@user = User.find(8)
+		@user = User.find(params[:id])
 	end
 
 
 	private
-	def user_params
-		#params.fetch(:user).permit(:username, :email, :password)
-		params.require(:user).permit(:username, :email, :password)
-	end
+		def user_params
+			params.require(:user).permit(:username, :email, :password)
+		end
 end
