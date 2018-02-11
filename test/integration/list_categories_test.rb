@@ -14,8 +14,5 @@ class ListCategoriesTest < ActionDispatch::IntegrationTest
 		assert_select "a[href=?]", category_path(@category2), text: @category2.name
 	end 
 
-
-
-
 	
 end
