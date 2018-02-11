@@ -25,9 +25,9 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
 		assert_select 'div.panel-body'
 	end 
 
-	# test "get new category form and create category" do
+	test "get new category form and create category" do
 		
-	# end 
+	end 
 
 
 
